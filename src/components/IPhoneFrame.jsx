@@ -31,11 +31,13 @@ export default function IPhoneFrame({
 
         {/* Inner Screen Bezel - Standard 19.5:9 mobile ratio (never stretches) */}
         <div className="relative w-full rounded-[40px] overflow-hidden bg-[#F4FFE1] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.15)] aspect-[9/19.5]">
-          <img
+          <Image
             src={src}
             alt={alt}
+            fill
+            sizes="(max-width: 640px) 280px, (max-width: 768px) 310px, 325px"
             className={`w-full h-full object-cover origin-top ${position} ${zoom} ${imageClassName} block pointer-events-none transition-transform duration-300`}
-            loading={priority ? "eager" : "lazy"}
+            priority={priority}
           />
 
           {/* Subtle Screen Glare Glass Reflection */}
