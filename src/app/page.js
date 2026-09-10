@@ -2,64 +2,48 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import InteractiveAppShowcase from "@/components/InteractiveAppShowcase";
-import AICoachSection from "@/components/AICoachSection";
-import DebtSnowballSection from "@/components/DebtSnowballSection";
-import BudgetAnalyticsSection from "@/components/BudgetAnalyticsSection";
-import OnboardingFlowSection from "@/components/OnboardingFlowSection";
-import DebtCalculator from "@/components/DebtCalculator";
-import GamificationSection from "@/components/GamificationSection";
+import PillarsSection from "@/components/PillarsSection";
+import StorytellingFeatures from "@/components/StorytellingFeatures";
+import ToolkitGrid from "@/components/ToolkitGrid";
+import BadgesSection from "@/components/BadgesSection";
 import SecuritySection from "@/components/SecuritySection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import DownloadCTA from "@/components/DownloadCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#041712] text-[#EEF8F0] overflow-x-hidden selection:bg-[#36AC62]/30 selection:text-[#EEF8F0]">
-      {/* Sticky Navigation Bar */}
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#FFDFAC] via-[#F4FFE1] to-[#FDFEFB] text-[#0A1B15] overflow-x-hidden selection:bg-[#649809]/20 selection:text-[#0A4130]">
+      {/* 1. Sticky Navigation Bar */}
       <Navbar />
 
       <main className="flex-1 w-full">
-        {/* Hero with 3D iPhone Presentation */}
+        {/* 2. Hero Section */}
         <Hero />
 
-        {/* Interactive App Screen Switcher (All Mockups) */}
-        <InteractiveAppShowcase />
+        {/* 3. Core Philosophy (3 Pillars - concise) */}
+        <PillarsSection />
 
-        {/* Feature Deep Dive 1: AI Coach Nia & Voice AI */}
-        <AICoachSection />
+        {/* 4. Storytelling Features (Concise copy, real mockups, no tabs, no scroll) */}
+        <StorytellingFeatures />
 
-        {/* Feature Deep Dive 2: Debt Snowball Accelerator */}
-        <DebtSnowballSection />
+        {/* 5. Complete Toolkit (Numbered 01-06) */}
+        <ToolkitGrid />
 
-        {/* Feature Deep Dive 3: Needs vs. Wants Budgeting */}
-        <BudgetAnalyticsSection />
+        {/* 6. Gamified Badges & Milestones */}
+        <BadgesSection />
 
-        {/* Feature Deep Dive 4: 6-Step Onboarding Walkthrough */}
-        <OnboardingFlowSection />
-
-        {/* Interactive Debt Freedom & Interest Savings Calculator */}
-        <DebtCalculator />
-
-        {/* Gamification & Trophy Badges */}
-        <GamificationSection />
-
-        {/* Enterprise Security & Privacy Assurance */}
+        {/* 7. Security & Trust Strip */}
         <SecuritySection />
 
-        {/* Real Customer Success Stories */}
-        <TestimonialsSection />
-
-        {/* Frequently Asked Questions */}
+        {/* 8. FAQ Section */}
         <FAQSection />
 
-        {/* Download App & SMS Link Dispatcher */}
+        {/* 9. Final Call-to-Action (Coming Soon) */}
         <DownloadCTA />
       </main>
 
-      {/* Footer */}
+      {/* 10. Footer */}
       <Footer />
     </div>
   );

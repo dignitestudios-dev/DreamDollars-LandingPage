@@ -1,117 +1,139 @@
 "use client";
 
 import { useState } from "react";
-import { HelpCircle, ChevronDown, Sparkles, MessageCircle } from "lucide-react";
+import { HelpCircle, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import FadeIn from "./FadeIn";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
     {
-      q: "How is my Net Worth calculated?",
-      a: "Your Net Worth is calculated in real time by summing all your confirmed assets (cash in savings buckets, high-yield accounts, investment portfolios, and property equity) and subtracting all outstanding liabilities (credit card balances, auto loans, personal loans, and student debt).",
+      category: "Account Setup",
+      q: "How do I create and verify my account?",
+      a: "Register with your email address or use one-tap Google and Apple Sign-In. A fast email verification link confirms your ownership so you can begin cataloging debts and assets immediately.",
     },
     {
-      q: "Can I change my snowball debt payoff order?",
-      a: "Yes! By default, Dream Dollars uses the classic Snowball Method (sorting from smallest balance to largest) because it provides fast psychological momentum. However, you can switch to the Avalanche Method (highest interest APR first) or set a custom payoff priority anytime in your settings.",
+      category: "Security & 2FA",
+      q: "What security features are available?",
+      a: "Dream Dollars utilizes industry-standard encryption, verified sign-in protocols, and optional Two-Factor Authentication (2FA) for an added security checkpoint.",
     },
     {
-      q: "Does the Voice AI Assistant move real money?",
-      a: "No. The Voice AI Assistant (Coach Nia) is strictly for expense logging, checking budget headroom, and strategic advisory. Dream Dollars operates on secure read-only bank feeds and will never initiate external bank transfers without explicit multi-factor verification.",
+      category: "Core Features",
+      q: "What tools are included in Dream Dollars?",
+      a: "An all-in-one suite: the automated Debt Snowball payoff planner, budgeting with surplus rollover, purpose-driven savings buckets, real-time net worth tracking, and short financial lessons.",
     },
     {
-      q: "What happens to my monthly budget surplus?",
-      a: "When you spend less than your allocated Needs and Wants limits, your surplus is highlighted on your dashboard. With one tap, you can auto-route this surplus directly to your active snowball debt target or your high-yield emergency fund bucket.",
+      category: "Data Privacy",
+      q: "How is my personal financial information protected?",
+      a: "Your records are encrypted and strictly used to calculate your debt payoff schedules and net worth trends. Your data is never sold or monetized to advertisers.",
     },
     {
-      q: "Is my personal and financial data private?",
-      a: "100% yes. Dream Dollars utilizes bank-grade 256-bit AES encryption with biometric FaceID/TouchID security. We do not sell your data, monetize your transaction history, or share your profile with advertising brokers.",
-    },
-    {
-      q: "How does Coach Nia give personalized financial tips?",
-      a: "Coach Nia analyzes your real transaction patterns, interest rates, and budget category limits. She identifies high-interest refinance opportunities, subscription leaks, and surplus allocation strategies tailored specifically to your financial goals.",
+      category: "Debt Snowball",
+      q: "How does the Debt Snowball accelerate payoffs?",
+      a: "Debts are organized smallest to largest balance. When your smallest debt reaches zero, its entire monthly payment rolls into the next target, compounding payoff speed.",
     },
   ];
 
   return (
-    <section id="faq" className="relative py-24 sm:py-32 bg-[#051C16] border-t border-white/10 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#649809]/10 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#649809]/20 text-[#75D47A] text-xs font-bold border border-[#649809]/40 mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Frequently Asked Questions</span>
+    <section id="faq" className="relative py-20 sm:py-28 bg-white border-t border-[#0A4130]/10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <FadeIn className="text-center max-w-xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4FFE1] border border-[#0A4130]/15 text-[#0A4130] text-[11px] font-bold uppercase font-minor mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-[#649809]" />
+            <span>FAQ</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
-            Everything You Need to Know
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0A1B15]">
+            Frequently Asked <span className="text-[#649809]">Questions.</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#64736A]">
-            Have questions about Dream Dollars? Here are answers to the most common questions from our community.
+          <p className="mt-2 text-xs sm:text-sm text-[#64736A]">
+            Quick answers about account setup, security, and debt management.
           </p>
-        </div>
+        </FadeIn>
 
-        {/* Accordion List */}
-        <div className="mt-12 space-y-3.5">
+        {/* Accordion */}
+        <FadeIn delay={0.1} className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
+
             return (
-              <div
+              <motion.div
                 key={idx}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                layout
+                transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+                className={`rounded-2xl transition-colors duration-300 border overflow-hidden ${
                   isOpen
-                    ? "bg-[#041712] border-[#75D47A]/40 shadow-xl shadow-[#36AC62]/10"
-                    : "bg-white/[0.02] border-white/10 hover:border-white/20 hover:bg-white/[0.04]"
+                    ? "bg-[#F4FFE1]/50 border-[#649809]/40 shadow-xs"
+                    : "bg-white border-[#0A4130]/10 hover:border-[#0A4130]/20"
                 }`}
               >
                 <button
+                  type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
+                  aria-expanded={isOpen}
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className="text-sm sm:text-base font-bold text-white font-heading">
-                    {faq.q}
-                  </span>
-                  <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen
-                        ? "bg-[#649809] text-[#041712] rotate-180"
-                        : "bg-white/5 text-white/70"
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-white text-[#0A4130] border border-[#0A4130]/10 font-minor w-fit">
+                      {faq.category}
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#0A1B15]">
+                      {faq.q}
+                    </span>
+                  </div>
+
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors duration-200 ${
+                      isOpen ? "bg-[#0A4130] text-white" : "bg-slate-100 text-[#0A1B15]"
                     }`}
                   >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  </motion.div>
                 </button>
 
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-[#EEF8F0]/80 leading-relaxed border-t border-white/5 pt-3 animate-in fade-in duration-200">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ 
+                        height: "auto", 
+                        opacity: 1,
+                        transition: {
+                          height: { duration: 0.35, ease: [0.25, 1, 0.5, 1] },
+                          opacity: { duration: 0.25, delay: 0.08 }
+                        }
+                      }}
+                      exit={{ 
+                        height: 0, 
+                        opacity: 0,
+                        transition: {
+                          height: { duration: 0.3, ease: [0.25, 1, 0.5, 1] },
+                          opacity: { duration: 0.15 }
+                        }
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <motion.div 
+                        initial={{ y: -6 }}
+                        animate={{ y: 0 }}
+                        exit={{ y: -6 }}
+                        transition={{ duration: 0.25 }}
+                        className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-[#64736A] leading-relaxed border-t border-[#0A4130]/10 pt-3"
+                      >
+                        {faq.a}
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-        </div>
-
-        {/* Support Callout */}
-        <div className="mt-10 p-6 rounded-3xl bg-gradient-to-r from-white/[0.04] to-white/[0.01] border border-white/10 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-left">
-            <div className="w-10 h-10 rounded-2xl bg-[#649809]/30 text-[#75D47A] flex items-center justify-center font-bold">
-              <MessageCircle className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-white font-heading">Still have questions?</div>
-              <div className="text-xs text-[#64736A]">Our certified advisory team is always ready to assist.</div>
-            </div>
-          </div>
-          <a
-            href="mailto:support@dreamdollars.app"
-            className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/15 transition-colors whitespace-nowrap"
-          >
-            Message Support →
-          </a>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

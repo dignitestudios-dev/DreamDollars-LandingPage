@@ -1,153 +1,123 @@
 "use client";
 
 import Image from "next/image";
-import { ShieldCheck, Heart, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const navLinks = [
+    { name: "Features", href: "#features" },
+    { name: "How It Works", href: "#how-it-works" },
+    { name: "Budgeting", href: "#budgeting" },
+    { name: "Net Worth", href: "#net-worth" },
+    { name: "Badges", href: "#badges" },
+    { name: "FAQ", href: "#faq" },
+  ];
+
   return (
-    <footer className="bg-[#020F0C] border-t border-white/10 text-left pt-16 pb-12 text-[#64736A]">
+    <footer className="bg-[#FFDFAC]/30 border-t border-[#0A4130]/10 pt-14 pb-10 text-[#64736A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-12 border-b border-white/10">
-          {/* Col 1: Brand & Bio */}
-          <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 rounded-2xl overflow-hidden bg-gradient-to-br from-[#649809] to-[#0A4130] p-0.5 shadow-md shadow-[#36AC62]/20 group-hover:scale-105 transition-transform">
-                <img
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-10 border-b border-[#0A4130]/10">
+          {/* Col 1: Brand */}
+          <div className="lg:col-span-5 space-y-3">
+            <a href="#" className="flex items-center gap-3 group" aria-label="Dream Dollars">
+              <div className="relative w-9 h-9 rounded-xl overflow-hidden bg-white border border-[#0A4130]/10 shadow-xs p-1 group-hover:scale-105 transition-transform">
+                <Image
                   src="/logo.png"
                   alt="Dream Dollars Logo"
-                  className="w-full h-full object-cover rounded-[14px]"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-xl font-extrabold tracking-tight font-heading text-white">
-                Dream Dollars
-              </span>
+              <div className="flex flex-col">
+                <span className="text-lg font-extrabold tracking-tight text-[#0A1B15]">
+                  Dream Dollars
+                </span>
+                <span className="text-[10px] tracking-widest uppercase text-[#649809] font-bold font-minor">
+                  Driving Dreams To Destiny
+                </span>
+              </div>
             </a>
-            <p className="text-xs sm:text-sm text-[#64736A] leading-relaxed max-w-sm">
-              The AI-powered personal finance and debt snowball mobile app designed to help you crush debt, automate smart budgeting, and build lasting net worth.
+            <p className="text-xs text-[#64736A] leading-relaxed max-w-sm">
+              The personal finance mobile app for debt reduction snowballing, smart budgeting with surplus rollover, and live net worth tracking.
             </p>
-            <div className="flex items-center gap-2 text-xs text-[#75D47A]">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Bank-grade 256-bit encryption & read-only security.</span>
-            </div>
           </div>
 
-          {/* Col 2: Product */}
-          <div>
-            <h4 className="text-xs uppercase font-extrabold text-white tracking-wider mb-4 font-heading">
-              Product
+          {/* Col 2: Navigation Links */}
+          <div className="lg:col-span-3">
+            <h4 className="text-xs uppercase font-extrabold text-[#0A1B15] tracking-widest mb-3 font-minor">
+              Quick Links
             </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <a href="#ai-coach" className="hover:text-white transition-colors">
-                  Coach Nia (AI Financial Coach)
-                </a>
-              </li>
-              <li>
-                <a href="#debt-snowball" className="hover:text-white transition-colors">
-                  Debt Snowball Accelerator
-                </a>
-              </li>
-              <li>
-                <a href="#budgeting" className="hover:text-white transition-colors">
-                  Needs vs. Wants Budgeting
-                </a>
-              </li>
-              <li>
-                <a href="#showcase" className="hover:text-white transition-colors">
-                  Unified Net Worth Map
-                </a>
-              </li>
-              <li>
-                <a href="#showcase" className="hover:text-white transition-colors">
-                  Savings Buckets & Goals
-                </a>
-              </li>
+            <ul className="space-y-2 text-xs">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="hover:text-[#0A4130] transition-colors font-medium"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Resources */}
-          <div>
-            <h4 className="text-xs uppercase font-extrabold text-white tracking-wider mb-4 font-heading">
-              Resources
+          {/* Col 3: Legal */}
+          <div className="lg:col-span-4 space-y-3">
+            <h4 className="text-xs uppercase font-extrabold text-[#0A1B15] tracking-widest mb-3 font-minor">
+              Legal &amp; Privacy
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-1.5 text-xs">
               <li>
-                <a href="#calculator" className="hover:text-white transition-colors">
-                  Debt Payoff Calculator
-                </a>
-              </li>
-              <li>
-                <a href="#onboarding" className="hover:text-white transition-colors">
-                  How It Works (6 Steps)
-                </a>
-              </li>
-              <li>
-                <a href="#showcase" className="hover:text-white transition-colors">
-                  App Screenshot Gallery
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-white transition-colors">
-                  Frequently Asked Questions
-                </a>
-              </li>
-              <li>
-                <a href="mailto:support@dreamdollars.app" className="hover:text-white transition-colors">
-                  Support Center
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Legal & Security */}
-          <div>
-            <h4 className="text-xs uppercase font-extrabold text-white tracking-wider mb-4 font-heading">
-              Legal & Privacy
-            </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#0A1B15] transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#0A1B15] transition-colors">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Security Whitepaper
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Consumer Data Protection
+                <a href="#" className="hover:text-[#0A1B15] transition-colors">
+                  Security Standards
                 </a>
               </li>
             </ul>
+
+            {/* Social Placeholder Icons */}
+            {/* <div className="pt-2 flex items-center gap-2.5">
+              {["X", "In", "Ig", "Fb"].map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  aria-label={item}
+                  className="w-7 h-7 rounded-full bg-white border border-[#0A4130]/15 hover:border-[#649809] hover:text-[#0A4130] text-[11px] font-bold text-[#64736A] flex items-center justify-center transition-colors shadow-xs"
+                >
+                  {item}
+                </a>
+              ))}
+            </div> */}
           </div>
         </div>
 
-        {/* Bottom Bar: Disclaimer & Copyright */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-[11px] text-[#64736A]">
+        {/* Bottom Bar */}
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left text-[11px] text-[#64736A]">
           <p>
-            © {new Date().getFullYear()} Dream Dollars App Inc. All rights reserved. Dream Dollars is a financial technology tool. AI coaching is intended for educational and wellness purposes.
+            &copy; {new Date().getFullYear()} Dream Dollars. All rights reserved. Dream Dollars is a financial management tool designed for personal planning and debt reduction.
           </p>
 
-          <div className="flex items-center gap-4">
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
-            >
-              <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1 text-xs font-semibold text-[#64736A] hover:text-[#0A4130] transition-colors cursor-pointer"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3 h-3" />
+          </button>
         </div>
       </div>
     </footer>

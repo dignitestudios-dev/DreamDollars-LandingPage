@@ -10,34 +10,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata = {
   metadataBase: new URL("https://dreamdollars.app"),
-  title: "Dream Dollars — Build Real Wealth, Live Debt-Free with AI",
+  title: "Dream Dollars — Debt Management & Budgeting (Coming Soon)",
   description:
-    "The all-in-one AI-powered personal wealth and debt freedom mobile app. Master your budget, crush debt with smart snowball plans, grow savings buckets, track real-time net worth, and get 24/7 personalized coaching from your AI Financial Coach.",
-  keywords: [
-    "Dream Dollars",
-    "Debt Snowball App",
-    "AI Financial Coach",
-    "Net Worth Tracker",
-    "Budget Planner",
-    "Personal Finance App",
-    "Debt Free",
-    "Savings Buckets",
-  ],
+    "Dream Dollars is the smart debt snowball and personal finance app. Crush debt, budget with surplus rollover, and track net worth.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
-  },
-  openGraph: {
-    title: "Dream Dollars — Build Real Wealth, Live Debt-Free with AI",
-    description:
-      "Master your budget, crush debt with smart snowball plans, grow savings buckets, track real-time net worth, and get 24/7 AI financial coaching.",
-    images: ["/mockups/Home.png"],
-    type: "website",
   },
 };
 
@@ -47,7 +30,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${plusJakartaSans.variable} ${sora.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#041712] text-[#EEF8F0] font-sans antialiased selection:bg-[#36AC62]/30 selection:text-[#EEF8F0]">
+      <body className="min-h-screen font-sans antialiased text-[#0A1B15] selection:bg-[#649809]/20 selection:text-[#0A4130]">
         {children}
       </body>
     </html>

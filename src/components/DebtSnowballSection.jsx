@@ -2,128 +2,152 @@
 
 import IPhoneFrame from "./IPhoneFrame";
 import {
-  CreditCard,
-  Flame,
-  CheckCircle2,
-  TrendingDown,
-  Trophy,
-  ArrowRight,
-  ShieldAlert,
+  Layers,
   Sparkles,
-  Zap,
+  TrendingDown,
+  ArrowRight,
+  CheckCircle2,
+  ListOrdered,
+  Calculator,
+  LineChart,
 } from "lucide-react";
 
 export default function DebtSnowballSection() {
-  const snowballSteps = [
+  const steps = [
     {
-      step: "01",
-      title: "Consolidate & Rank Your Debts",
-      desc: "Connect credit cards, student loans, medical bills, and auto loans. Dream Dollars automatically sorts them by balance or APR.",
+      num: "01",
+      icon: ListOrdered,
+      title: "Prioritize Debts",
+      description:
+        "Input your loans and credit balances. The Debt Snowball algorithm organizes them from smallest to largest balance to ignite immediate momentum with fast payoff wins.",
+      accent: "cyan",
     },
     {
-      step: "02",
-      title: "Attack The Smallest Balance",
-      desc: "Pay minimums on everything else while throwing all surplus funds at Debt #1 to achieve your fast 'First Strike' victory.",
+      num: "02",
+      icon: Calculator,
+      title: "Auto-Generate Payment Plan",
+      description:
+        "Dream Dollars automatically calculates your custom monthly payment schedule — allocating minimums to secondary debts while concentrating surplus funds onto your primary target.",
+      accent: "lime",
     },
     {
-      step: "03",
-      title: "Roll Payments Into the Next Target",
-      desc: "When Debt #1 is gone, its full payment rolls into Debt #2. Your payoff snowball grows heavier with every debt eliminated.",
-    },
-    {
-      step: "04",
-      title: "Celebrate Complete Debt Freedom",
-      desc: "Unlock the 'Debt Free' trophy and redirect your entire monthly payment stream into wealth-building savings & investments!",
+      num: "03",
+      icon: LineChart,
+      title: "Track Visual Progress",
+      description:
+        "Watch your remaining balances shrink in real time. As each debt is eliminated, its monthly payment automatically rolls into the next, accelerating your debt freedom date.",
+      accent: "cyan",
     },
   ];
 
   return (
-    <section id="debt-snowball" className="relative py-24 sm:py-32 bg-[#041712] border-t border-white/10 overflow-hidden">
-      {/* Background Red & Green Accent Gradients */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-[#DE3B3D]/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#36AC62]/15 rounded-full blur-[120px] pointer-events-none" />
+    <section
+      id="how-it-works"
+      className="relative py-24 sm:py-32 bg-[#081322] border-t border-white/5 overflow-hidden"
+    >
+      {/* Ambient background glow highlights */}
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#00BCC5]/12 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] bg-[#75D47A]/12 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0D1B2D] border border-[#75D47A]/40 text-[#75D47A] text-xs font-extrabold uppercase tracking-widest mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#00BCC5]" />
+            <span>Signature Differentiator</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight heading-display text-white">
+            HOW IT WORKS: <span className="text-gradient-lime-cyan">THE DEBT SNOWBALL METHOD</span>
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-[#8EA1B4] leading-relaxed">
+            Dream Dollars leverages the proven Debt Snowball reduction methodology to turn fragmented debts into an organized, automated path to total freedom.
+          </p>
+        </div>
+
+        {/* Core Layout: 3-Step Visual & Phone Mockup */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: iPhone Mockup for Debt.png */}
-          <div className="lg:col-span-6 flex justify-center order-2 lg:order-1">
-            <div className="relative">
-              <IPhoneFrame
-                src="/mockups/Debt.png"
-                alt="Dream Dollars Debt Snowball Payoff Tracker"
-                scrollable={true}
-                badge={
-                  <div className="bg-[#0A1B15] border border-[#DE3B3D]/50 backdrop-blur-xl p-4 rounded-3xl shadow-2xl text-left max-w-[240px]">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#DE3B3D] uppercase">
-                      <Zap className="w-4 h-4 text-[#EBBD57]" />
-                      <span>Accelerated Snowball</span>
+          {/* Left Column: 3-Step Visual Journey */}
+          <div className="lg:col-span-6 space-y-6">
+            {steps.map((step) => {
+              const Icon = step.icon;
+              const isLime = step.accent === "lime";
+
+              return (
+                <div
+                  key={step.num}
+                  className="glass-card p-6 sm:p-7 rounded-2xl relative flex items-start gap-5 group"
+                >
+                  {/* Step Number & Icon Badge */}
+                  <div className="flex flex-col items-center shrink-0">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center font-black text-base transition-all duration-300 group-hover:scale-110 ${
+                        isLime
+                          ? "bg-[#75D47A]/15 text-[#75D47A] border border-[#75D47A]/30"
+                          : "bg-[#00BCC5]/15 text-[#00BCC5] border border-[#00BCC5]/30"
+                      }`}
+                    >
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <div className="text-xl font-extrabold text-white font-heading mt-1">
-                      -$12,400 Paid Off
-                    </div>
-                    <p className="text-[11px] text-[#64736A] mt-0.5">
-                      3 Debts Eliminated · 14 Months Ahead of Bank Schedule
+                    <span className="mt-2 text-[10px] font-mono font-bold tracking-widest text-[#8EA1B4]/70 uppercase">
+                      Step {step.num}
+                    </span>
+                  </div>
+
+                  {/* Step Text Content */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-white heading-display group-hover:text-[#75D47A] transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-[#8EA1B4] leading-relaxed">
+                      {step.description}
                     </p>
                   </div>
-                }
-              />
+                </div>
+              );
+            })}
+
+            {/* Bottom summary callout */}
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-[#0D1B2D] to-[#12243C] border border-[#00BCC5]/30 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-[#75D47A]/20 flex items-center justify-center text-[#75D47A] shrink-0">
+                  <TrendingDown className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase font-extrabold text-[#75D47A] tracking-wider">
+                    Compound Momentum
+                  </p>
+                  <p className="text-xs text-[#8EA1B4]">
+                    Each cleared debt rolls 100% of its allocation forward into the next.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Copy, Strategy, & Snowball Flow */}
-          <div className="lg:col-span-6 space-y-8 text-left order-1 lg:order-2">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DE3B3D]/20 text-[#DE3B3D] text-xs font-bold border border-[#DE3B3D]/40 mb-4">
-                <Flame className="w-3.5 h-3.5" />
-                <span>Proven Debt Elimination Engine</span>
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight leading-[1.15]">
-                Crush Debt Fast. <br />
-                <span className="text-gradient-emerald">Keep Your Momentum.</span>
-              </h2>
-              <p className="mt-4 text-base sm:text-lg text-[#EEF8F0]/80 leading-relaxed">
-                Paying only minimums keeps you trapped in compound interest. Dream Dollars unleashes the **Debt Snowball Accelerator** to systematically knock out debt after debt until you owe zero dollars to anyone.
-              </p>
-            </div>
+          {/* Right Column: Actual Debt.png Mockup Screen */}
+          <div className="lg:col-span-6 flex justify-center items-center relative">
+            <div className="relative">
+              {/* Backlight Glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#00BCC5]/25 via-[#75D47A]/20 to-transparent rounded-[60px] blur-3xl opacity-70 pointer-events-none" />
 
-            {/* Snowball Step Pipeline */}
-            <div className="space-y-4">
-              {snowballSteps.map((item) => (
-                <div
-                  key={item.step}
-                  className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#75D47A]/40 transition-all duration-300 flex items-start gap-4 group"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-[#053126] border border-[#75D47A]/30 text-[#75D47A] font-extrabold text-sm flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#649809] group-hover:text-[#041712] transition-all">
-                    {item.step}
+              <IPhoneFrame
+                src="/mockups/Debt.png"
+                alt="Dream Dollars Debt Snowball Payoff interface showing active debts, snowball method, and focus debt"
+                glow={true}
+                badge={
+                  <div className="bg-[#0D1B2D]/95 border border-[#00BCC5]/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-xl flex items-center gap-3 max-w-[220px]">
+                    <div className="w-8 h-8 rounded-xl bg-[#00BCC5]/20 flex items-center justify-center text-[#00BCC5]">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-extrabold text-[#8EA1B4]">
+                        Snowball Active
+                      </p>
+                      <p className="text-xs font-bold text-white">Focus: Store Card</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-white font-heading">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-[#64736A] mt-1 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Snowball vs Minimum Comparison Banner */}
-            <div className="p-5 rounded-3xl bg-gradient-to-r from-[#053126] to-[#001914] border border-[#36AC62]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <div className="text-xs font-bold text-[#75D47A] uppercase tracking-wider">
-                  Dream Dollars Difference
-                </div>
-                <div className="text-base font-bold text-white mt-0.5">
-                  Save an average of <span className="text-[#EBBD57]">$6,400+</span> in interest
-                </div>
-              </div>
-              <a
-                href="#calculator"
-                className="px-5 py-2.5 rounded-full bg-[#649809] hover:bg-[#75D47A] text-[#041712] text-xs font-extrabold whitespace-nowrap shadow-md hover:scale-105 transition-all"
-              >
-                Calculate My Payoff Date →
-              </a>
+                }
+              />
             </div>
           </div>
         </div>
