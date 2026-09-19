@@ -39,7 +39,7 @@ export default function Home() {
         {/* 8. FAQ Section */}
         <FAQSection />
 
-        {/* 9. Final Call-to-Action: Waitlist (Launching Soon) */}
+        {/* 9. Final Call-to-Action: Contact Us */}
         <DownloadCTA />
       </main>
 

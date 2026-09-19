@@ -72,13 +72,13 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Waitlist Button */}
+          {/* Contact Button */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href="#waitlist"
+              href="#contact"
               className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0A4130] hover:bg-[#649809] text-white hover:text-[#0A1B15] font-bold text-xs uppercase tracking-wider shadow-sm hover:scale-105 transition-all duration-300"
             >
-              <span>Join Waitlist</span>
+              <span>Contact Us</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
@@ -110,11 +110,11 @@ export default function Navbar() {
           ))}
           <div className="pt-4 border-t border-[#0A4130]/10">
             <a
-              href="#waitlist"
+              href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#0A4130] text-white font-bold text-xs uppercase tracking-wider"
             >
-              <span>Join Waitlist</span>
+              <span>Contact Us</span>
             </a>
           </div>
         </div>

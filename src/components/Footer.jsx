@@ -16,7 +16,7 @@ export default function Footer() {
     { name: "Net Worth", href: "#net-worth" },
     { name: "Toolkit", href: "#toolkit" },
     { name: "Milestones", href: "#milestones" },
-    { name: "Join Waitlist", href: "#waitlist" },
+    { name: "Contact Us", href: "#contact" },
     { name: "FAQ", href: "#faq" },
   ];
 
@@ -86,8 +86,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#early-access" className="hover:text-[#0A1B15] transition-colors">
-                  Waitlist Access
+                <a href="#contact" className="hover:text-[#0A1B15] transition-colors">
+                  Contact Us
                 </a>
               </li>
             </ul>

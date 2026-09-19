@@ -62,10 +62,10 @@ export default function Hero() {
             {/* Dual CTAs */}
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <a
-                href="#waitlist"
+                href="#contact"
                 className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#0A4130] hover:bg-[#649809] text-white hover:text-[#0A1B15] font-bold text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all duration-300"
               >
-                <span>JOIN THE WAITLIST</span>
+                <span>CONTACT US</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
