@@ -18,19 +18,19 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-1 w-full">
-        {/* 2. Hero Section */}
+        {/* 2. Hero Section: Make Your Money Make Sense */}
         <Hero />
 
-        {/* 3. Core Philosophy (3 Pillars - concise) */}
+        {/* 3. How It Works: ASCEND CA$H Framework */}
         <PillarsSection />
 
-        {/* 4. Storytelling Features (Concise copy, real mockups, no tabs, no scroll) */}
+        {/* 4. Core Features: Debt Reduction, Spending Plan, Savings, Net Worth */}
         <StorytellingFeatures />
 
-        {/* 5. Complete Toolkit (Numbered 01-06) */}
+        {/* 5. Complete DreamDollars Toolkit (01-06) */}
         <ToolkitGrid />
 
-        {/* 6. Gamified Badges & Milestones */}
+        {/* 6. Celebrate Your Progress (Milestones) */}
         <BadgesSection />
 
         {/* 7. Security & Trust Strip */}
@@ -39,11 +39,11 @@ export default function Home() {
         {/* 8. FAQ Section */}
         <FAQSection />
 
-        {/* 9. Final Call-to-Action (Coming Soon) */}
+        {/* 9. Final Call-to-Action: Waitlist (Launching Soon) */}
         <DownloadCTA />
       </main>
 
-      {/* 10. Footer */}
+      {/* 10. Footer (Powered by ASCEND) */}
       <Footer />
     </div>
   );

@@ -9,11 +9,14 @@ export default function Footer() {
   };
 
   const navLinks = [
-    { name: "Features", href: "#features" },
     { name: "How It Works", href: "#how-it-works" },
-    { name: "Budgeting", href: "#budgeting" },
+    { name: "Debt Reduction", href: "#debt-reduction" },
+    { name: "Spending Plan", href: "#spending-plan" },
+    { name: "Savings", href: "#savings" },
     { name: "Net Worth", href: "#net-worth" },
-    { name: "Badges", href: "#badges" },
+    { name: "Toolkit", href: "#toolkit" },
+    { name: "Milestones", href: "#milestones" },
+    { name: "Join Waitlist", href: "#waitlist" },
     { name: "FAQ", href: "#faq" },
   ];
 
@@ -23,36 +26,36 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-10 border-b border-[#0A4130]/10">
           {/* Col 1: Brand */}
           <div className="lg:col-span-5 space-y-3">
-            <a href="#" className="flex items-center gap-3 group" aria-label="Dream Dollars">
-              <div className="relative w-9 h-9 rounded-xl overflow-hidden bg-white border border-[#0A4130]/10 shadow-xs p-1 group-hover:scale-105 transition-transform">
+            <a href="#" className="flex items-center gap-3 group" aria-label="DreamDollars">
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-white border border-[#0A4130]/10 shadow-xs p-1 group-hover:scale-105 transition-transform">
                 <Image
                   src="/logo.png"
-                  alt="Dream Dollars Logo"
-                  width={32}
-                  height={32}
+                  alt="DreamDollars Logo"
+                  width={36}
+                  height={36}
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-extrabold tracking-tight text-[#0A1B15]">
-                  Dream Dollars
+                  DreamDollars
                 </span>
-                <span className="text-[10px] tracking-widest uppercase text-[#649809] font-bold font-minor">
-                  Driving Dreams To Destiny
+                <span className="text-[10px] tracking-wider uppercase text-[#649809] font-bold font-minor">
+                  Powered by ASCEND: From Paycheck to Prosperity
                 </span>
               </div>
             </a>
             <p className="text-xs text-[#64736A] leading-relaxed max-w-sm">
-              The personal finance mobile app for debt reduction snowballing, smart budgeting with surplus rollover, and live net worth tracking.
+              The digital financial wellness tool designed to help you put the principles of ASCEND into practice—one decision, one dollar, and one goal at a time.
             </p>
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <h4 className="text-xs uppercase font-extrabold text-[#0A1B15] tracking-widest mb-3 font-minor">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
@@ -66,49 +69,35 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Legal */}
-          <div className="lg:col-span-4 space-y-3">
+          {/* Col 3: Legal & Ecosystem */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs uppercase font-extrabold text-[#0A1B15] tracking-widest mb-3 font-minor">
-              Legal &amp; Privacy
+              ASCEND Ecosystem
             </h4>
             <ul className="space-y-1.5 text-xs">
               <li>
-                <a href="#" className="hover:text-[#0A1B15] transition-colors">
-                  Privacy Policy
+                <a href="#how-it-works" className="hover:text-[#0A1B15] transition-colors">
+                  CA$H Framework
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#0A1B15] transition-colors">
-                  Terms of Service
+                <a href="#spending-plan" className="hover:text-[#0A1B15] transition-colors">
+                  Financial Freedom Spending Plan
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#0A1B15] transition-colors">
-                  Security Standards
+                <a href="#early-access" className="hover:text-[#0A1B15] transition-colors">
+                  Waitlist Access
                 </a>
               </li>
             </ul>
-
-            {/* Social Placeholder Icons */}
-            {/* <div className="pt-2 flex items-center gap-2.5">
-              {["X", "In", "Ig", "Fb"].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  aria-label={item}
-                  className="w-7 h-7 rounded-full bg-white border border-[#0A4130]/15 hover:border-[#649809] hover:text-[#0A4130] text-[11px] font-bold text-[#64736A] flex items-center justify-center transition-colors shadow-xs"
-                >
-                  {item}
-                </a>
-              ))}
-            </div> */}
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left text-[11px] text-[#64736A]">
           <p>
-            &copy; {new Date().getFullYear()} Dream Dollars. All rights reserved. Dream Dollars is a financial management tool designed for personal planning and debt reduction.
+            &copy; {new Date().getFullYear()} DreamDollars. Powered by ASCEND: From Paycheck to Prosperity. All rights reserved.
           </p>
 
           <button
@@ -123,3 +112,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -4,57 +4,63 @@ export default function ToolkitGrid() {
   const tools = [
     {
       num: "01",
+      pillar: "CLARITY",
       title: "Net Worth Dashboard",
-      description: "Live balance sheet aggregating accounts, property, and debts into one clear view.",
-      tag: "Core",
+      description: "See your assets and liabilities together for a clearer picture of your financial position.",
+      link: "#net-worth",
     },
     {
       num: "02",
-      title: "Debt Snowball Engine",
-      description: "Automated ranking by balance with compounding rollover payments.",
-      tag: "Signature",
+      pillar: "DEBT",
+      title: "Debt Reduction Tracker",
+      description: "Organize your debts, create your payoff strategy, and monitor your progress.",
+      link: "#debt-reduction",
     },
     {
       num: "03",
-      title: "Surplus Rollover Budgeting",
-      description: "Category limits where every unspent dollar auto-routes into debt payoff.",
-      tag: "Budget",
+      pillar: "CASH FLOW",
+      title: "Financial Freedom Spending Plan",
+      description: "Give your income direction with intentional spending categories designed around your real life.",
+      link: "#spending-plan",
     },
     {
       num: "04",
-      title: "Dedicated Savings Buckets",
-      description: "Visual goal allocations for emergencies, travel, and future milestones.",
-      tag: "Savings",
+      pillar: "SAVINGS",
+      title: "Purpose-Based Savings Buckets",
+      description: "Set aside money for emergencies, future goals, and the things that matter most.",
+      link: "#savings",
     },
     {
       num: "05",
-      title: "Fast Expense Categorization",
-      description: "Log and visualize daily outflows to catch spending leaks early.",
-      tag: "Tracking",
+      pillar: "TRACKING",
+      title: "Expense Categorization",
+      description: "Track everyday spending and recognize patterns before they derail your goals.",
+      link: "#spending-plan",
     },
     {
       num: "06",
-      title: "Gamified Badges & Milestones",
-      description: "Earn unlockable victory badges and track consistency streaks as you crush debt.",
-      tag: "Rewards",
+      pillar: "GOALS",
+      title: "Milestones & Celebrations",
+      description: "Track financial goals, recognize progress, and celebrate the wins that keep you moving forward.",
+      link: "#milestones",
     },
   ];
 
   return (
-    <section className="relative py-20 sm:py-24 bg-[#F4FFE1]/50 border-t border-b border-[#0A4130]/10">
+    <section id="toolkit" className="relative py-20 sm:py-28 bg-[#F4FFE1]/50 border-t border-b border-[#0A4130]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-widest text-[#649809] font-minor">
-              Toolkit
+              YOUR DREAMDOLLARS TOOLS
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0A1B15] mt-1.5">
-              Built for <span className="text-[#649809]">Real Results.</span>
+              Built to Turn Financial Clarity <span className="text-[#649809]">Into Action.</span>
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#64736A] max-w-sm leading-relaxed">
-            Eliminating financial anxiety with structured momentum and zero guesswork.
+            DreamDollars gives you practical tools to support the work you&apos;re doing through ASCEND.
           </p>
         </FadeIn>
 
@@ -69,10 +75,10 @@ export default function ToolkitGrid() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-bold text-[#649809] font-minor tracking-wider">
-                    {tool.num}
+                    {tool.num} — {tool.pillar}
                   </span>
                   <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-[#F4FFE1] text-[#0A4130] font-minor">
-                    {tool.tag}
+                    ASCEND Tool
                   </span>
                 </div>
 
@@ -86,8 +92,13 @@ export default function ToolkitGrid() {
               </div>
 
               <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#64736A]">
-                <span className="text-[11px]">Included in App</span>
-                <span className="text-[#0A4130] group-hover:text-[#649809] font-bold">&rarr;</span>
+                <a
+                  href={tool.link}
+                  className="inline-flex items-center gap-1 font-bold text-[#0A4130] group-hover:text-[#649809] transition-colors font-minor text-[11px]"
+                >
+                  <span>Explore tool</span>
+                  <span>&rarr;</span>
+                </a>
               </div>
             </FadeIn>
           ))}
@@ -96,3 +107,4 @@ export default function ToolkitGrid() {
     </section>
   );
 }
+

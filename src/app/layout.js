@@ -15,9 +15,9 @@ const sora = Sora({
 
 export const metadata = {
   metadataBase: new URL("https://dreamdollars.app"),
-  title: "Dream Dollars — Debt Management & Budgeting (Coming Soon)",
+  title: "DreamDollars — The Digital Financial Wellness Tool Powered by ASCEND",
   description:
-    "Dream Dollars is the smart debt snowball and personal finance app. Crush debt, budget with surplus rollover, and track net worth.",
+    "Turn financial clarity into everyday action. Organize your cash flow, manage spending, build savings, reduce debt, track your net worth, and set meaningful financial goals—all in one place.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",

@@ -10,29 +10,29 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      category: "Account Setup",
-      q: "How do I create and verify my account?",
-      a: "Register with your email address or use one-tap Google and Apple Sign-In. A fast email verification link confirms your ownership so you can begin cataloging debts and assets immediately.",
+      category: "ASCEND & DreamDollars",
+      q: "How does DreamDollars connect with ASCEND?",
+      a: "DreamDollars is the digital financial wellness tool powered by ASCEND. It provides a practical, real-time application for the ASCEND curriculum, coaching, and CA$H Framework so you can manage real money, real goals, and real life.",
     },
     {
-      category: "Security & 2FA",
-      q: "What security features are available?",
-      a: "Dream Dollars utilizes industry-standard encryption, verified sign-in protocols, and optional Two-Factor Authentication (2FA) for an added security checkpoint.",
+      category: "CA$H Framework",
+      q: "What is the ASCEND CA$H Framework?",
+      a: "CA$H stands for Clarity, Alignment, Structure, and Handle. DreamDollars organizes your entire financial life across these four pillars: seeing your total picture, giving every dollar a purpose, creating repeatable systems, and tracking progress into prosperity.",
+    },
+    {
+      category: "Spending Plan",
+      q: "What is the Financial Freedom Spending Plan?",
+      a: "Rather than restrictive budgeting, the Financial Freedom Spending Plan gives every dollar direction. You categorize expenses, identify leaks, and intentionally redirect surplus money toward savings, debt reduction, or personal goals.",
     },
     {
       category: "Core Features",
-      q: "What tools are included in Dream Dollars?",
-      a: "An all-in-one suite: the automated Debt Snowball payoff planner, budgeting with surplus rollover, purpose-driven savings buckets, real-time net worth tracking, and short financial lessons.",
+      q: "What tools are included in DreamDollars?",
+      a: "The complete toolkit includes the Net Worth Dashboard, Debt Reduction Tracker, Financial Freedom Spending Plan, Purpose-Based Savings Buckets, Expense Categorization, and Milestones & Progress Celebrations.",
     },
     {
-      category: "Data Privacy",
-      q: "How is my personal financial information protected?",
-      a: "Your records are encrypted and strictly used to calculate your debt payoff schedules and net worth trends. Your data is never sold or monetized to advertisers.",
-    },
-    {
-      category: "Debt Snowball",
-      q: "How does the Debt Snowball accelerate payoffs?",
-      a: "Debts are organized smallest to largest balance. When your smallest debt reaches zero, its entire monthly payment rolls into the next target, compounding payoff speed.",
+      category: "Security & Privacy",
+      q: "How is my personal financial data protected?",
+      a: "DreamDollars employs bank-grade encryption protocols, verified email/social sign-in, and optional Two-Factor Authentication (2FA). Your data is never sold or monetized.",
     },
   ];
 
@@ -49,7 +49,7 @@ export default function FAQSection() {
             Frequently Asked <span className="text-[#649809]">Questions.</span>
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-[#64736A]">
-            Quick answers about account setup, security, and debt management.
+            Learn how DreamDollars helps you put ASCEND financial principles into practice.
           </p>
         </FadeIn>
 

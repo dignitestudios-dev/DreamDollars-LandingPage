@@ -33,24 +33,39 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Concise Editorial Content */}
           <FadeIn className="lg:col-span-7 text-center lg:text-left space-y-5" y={25} duration={0.5}>
-            {/* Headline - Major Font */}
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#0A4130]/15 text-[#0A4130] text-xs font-bold font-minor tracking-wide shadow-xs mx-auto lg:mx-0">
+              <span className="w-2 h-2 rounded-full bg-[#649809] animate-pulse" />
+              <span>Make Your Money Make Sense.</span>
+            </div>
+
+            {/* Headline - Main Positioning */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A1B15] leading-[1.12]">
-              Achieve Financial Freedom with{" "}
-              <span className="text-[#649809]">Smart Debt Management.</span>
+              DreamDollars —{" "}
+              <span className="text-[#0A4130]">The Digital Financial Wellness Tool</span>{" "}
+              <span className="text-[#649809]">Powered by ASCEND</span>
             </h1>
 
-            {/* Subheadline - Less content, concise & punchy */}
-            <p className="text-base sm:text-lg text-[#64736A] max-w-xl leading-relaxed mx-auto lg:mx-0">
-              The all-in-one mobile app for debt reduction snowballing, budgeting with surplus rollover, and live net worth tracking.
-            </p>
+            {/* Supporting Copy */}
+            <div className="space-y-3 text-base sm:text-lg text-[#64736A] max-w-xl leading-relaxed mx-auto lg:mx-0">
+              <p className="font-bold text-[#0A1B15]">
+                Turn financial clarity into everyday action.
+              </p>
+              <p className="text-sm sm:text-base">
+                Organize your cash flow, manage spending, build savings, reduce debt, track your net worth, and set meaningful financial goals—all in one place.
+              </p>
+              <p className="text-xs sm:text-sm italic text-[#0A4130] bg-white/60 p-3 rounded-xl border border-[#0A4130]/10">
+                &ldquo;Because you don&apos;t need more money. You need more clarity, structure, and alignment for the money you already have.&rdquo;
+              </p>
+            </div>
 
             {/* Dual CTAs */}
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <a
-                href="#early-access"
+                href="#waitlist"
                 className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#0A4130] hover:bg-[#649809] text-white hover:text-[#0A1B15] font-bold text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all duration-300"
               >
-                <span>Coming Soon</span>
+                <span>JOIN THE WAITLIST</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
@@ -63,19 +78,23 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Concise Highlights */}
-            <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[#64736A] font-medium">
+            {/* CA$H Framework Highlights */}
+            <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs text-[#64736A] font-semibold">
               <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#649809]" />
-                Debt Snowball Engine
+                <span className="w-2 h-2 rounded-full bg-[#649809]" />
+                Clarity
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0A4130]" />
-                Surplus Rollover
+                <span className="w-2 h-2 rounded-full bg-[#0A4130]" />
+                Alignment
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#649809]" />
-                Net Worth Map
+                <span className="w-2 h-2 rounded-full bg-[#649809]" />
+                Structure
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#0A4130]" />
+                Handle
               </span>
             </div>
           </FadeIn>
@@ -93,7 +112,7 @@ export default function Hero() {
             >
               <IPhoneFrame
                 src="/mockups/Home.png"
-                alt="Dream Dollars Mobile App Dashboard"
+                alt="DreamDollars Mobile App Dashboard Powered by ASCEND"
                 priority={true}
                 glow={true}
                 zoom=""
@@ -104,10 +123,10 @@ export default function Hero() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase font-bold text-[#64736A] font-minor">
-                        Snowball Active
+                        CA$H Framework Active
                       </p>
                       <p className="text-xs font-extrabold text-[#0A4130]">
-                        Accelerated Payoff
+                        Clarity into Action
                       </p>
                     </div>
                   </div>
