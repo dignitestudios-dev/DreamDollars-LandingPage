@@ -22,6 +22,9 @@ export const metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+  verification: {
+    google: "googlef898191feecc5a64",
+  },
 };
 
 export default function RootLayout({ children }) {
